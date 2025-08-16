@@ -55,6 +55,8 @@ import RootHeader from './layout/rootHeader';
 import RootFooter from './layout/rootFooter';
 import { useSession } from 'next-auth/react';
 import Login from '@/app/(authentication)/auth/page';
+import SignUp from '@/app/(authentication)/signup/page';
+import { usePathname } from 'next/navigation';
 
 interface Props {
   children: React.ReactNode;
@@ -67,10 +69,12 @@ const queryClient = new QueryClient();
 const QueryProvider = ({ children }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { data: session, status: sessionStatus } = useSession();
+  const pathname = usePathname();
 
-  console.log(sessionStatus, 'sessionStatus===========')
-  if (sessionStatus === 'unauthenticated') {
-    return <Login />;
+  if (sessionStatus === 'unauthenticated' && pathname == '/signup') {
+    return <SignUp />;
+  }else if(sessionStatus === 'unauthenticated'){
+    return <Login/>
   }
   return (
    
