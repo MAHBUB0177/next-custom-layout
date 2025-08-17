@@ -16,8 +16,14 @@ const menuItems = [
     path: "/",
     submenu: [],
   },
-  {
+   {
     title: "Dashboard",
+    icon: <FiUser className="w-5 h-5" />,
+    path: "/dashboard",
+    submenu: [],
+  },
+  {
+    title: "Reports",
     icon: <FiUser className="w-5 h-5" />,
     path: "",
     submenu: [
