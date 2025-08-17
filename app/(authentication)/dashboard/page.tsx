@@ -16,7 +16,7 @@ const page = () => {
                                 <i className="fas fa-bed text-xl"></i>
                             </div>
                             <div className="ml-4">
-                                <p className="text-sm font-medium text-gray-500">Total Rooms</p>
+                                <p className="text-sm font-medium text-gray-500">Confirm Orders</p>
                                 <p className="text-2xl font-semibold text-gray-800">120</p>
                             </div>
                         </div>
@@ -27,7 +27,7 @@ const page = () => {
                                 <i className="fas fa-calendar-check text-xl"></i>
                             </div>
                             <div className="ml-4">
-                                <p className="text-sm font-medium text-gray-500">Occupied</p>
+                                <p className="text-sm font-medium text-gray-500">Pending Orders</p>
                                 <p className="text-2xl font-semibold text-gray-800">84</p>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ const page = () => {
                                 <i className="fas fa-calendar-day text-xl"></i>
                             </div>
                             <div className="ml-4">
-                                <p className="text-sm font-medium text-gray-500">Check-ins Today</p>
+                                <p className="text-sm font-medium text-gray-500">Cancel Orders </p>
                                 <p className="text-2xl font-semibold text-gray-800">12</p>
                             </div>
                         </div>
@@ -49,7 +49,7 @@ const page = () => {
                                 <i className="fas fa-calendar-times text-xl"></i>
                             </div>
                             <div className="ml-4">
-                                <p className="text-sm font-medium text-gray-500">Check-outs Today</p>
+                                <p className="text-sm font-medium text-gray-500">Total Orders</p>
                                 <p className="text-2xl font-semibold text-gray-800">8</p>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ const page = () => {
                     {/* <!-- Recent Bookings --> */}
                     <div className="lg:col-span-2 bg-white rounded-lg shadow overflow-hidden">
                         <div className="px-6 py-4 border-b border-gray-200">
-                            <h2 className="text-lg font-semibold text-gray-800">Recent Bookings</h2>
+                            <h2 className="text-lg font-semibold text-gray-800">Recent Orders</h2>
                         </div>
                         <div className="overflow-x-auto">
                             <table className="min-w-full divide-y divide-gray-200">
@@ -167,7 +167,7 @@ const page = () => {
                     {/* <!-- Room Status --> */}
                     <div className="bg-white rounded-lg shadow overflow-hidden">
                         <div className="px-6 py-4 border-b border-gray-200">
-                            <h2 className="text-lg font-semibold text-gray-800">Room Status</h2>
+                            <h2 className="text-lg font-semibold text-gray-800">Order Status</h2>
                         </div>
                         <div className="p-6">
                             <div className="mb-4">

@@ -27,8 +27,8 @@ const menuItems = [
     icon: <FiUser className="w-5 h-5" />,
     path: "",
     submenu: [
-      { title: "Analytics", path: "/dashboard/analytics" },
-      { title: "Reports", path: "/dashboard/reports" },
+      { title: "Products", path: "/reports/Products" },
+      { title: "Reports", path: "/reports/salesReports" },
     ],
   },
   {
