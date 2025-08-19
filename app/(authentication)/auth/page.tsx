@@ -1,32 +1,16 @@
 'use client'
-// import { errorMessage, successMessage } from '@/components/common/commonFunction';
-// import { setAuth, setAuthUser } from '@/reducer/authReducer';
-// import axios from 'axios';
+
+import axios from 'axios';
 import { signIn, useSession } from 'next-auth/react';
-// import { signIn, useSession } from 'next-auth/react';
+
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
-// import { useDispatch } from 'react-redux';
 
 
 
-// const authenticateWithNextAuth = async (userData: any) => {
 
-// const response = await signIn("credentials", {
-//   email: userData.user.email,
-//   name: userData.user.name,
-//   // accessToken: userData.accessToken,
-//   // refreshToken: userData.refreshToken,
-//   // tokenExpiration: userData.tokenExpiration,
-//   // refreshTokenExpiration: userData.refreshTokenExpiration,
-//   redirect: false, // Optional, set to true if you want NextAuth to handle redirects
-// });
-// if (response?.error) {
-//   throw new Error(response.error);
-// }
-//   return response;
-// };
+
 
 const authenticateWithNextAuth = async (userData: any) => {
   if (!userData?.email || !userData?.name) {
@@ -63,23 +47,9 @@ const Login = () => {
     }
     try {
       // const response = await axios.post(`https://node-express-hostapi-production-b68c.up.railway.app/api/user/login`, payload);
-    //   const response = await axios.post(`https://node-express-hostapi.vercel.app/api/user/login`, payload);
-    const res = await fetch(`https://node-express-hostapi.vercel.app/api/user/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-      
-      const response = await res.json();
-      console.log(response,'response=======')
-      
-      if (response?.isSuccess) {
-        // successMessage( response?.data?.message || 'User Successfully Logged In')
-        // dispatch(setAuth(response?.data?.data));
-        // dispatch(setAuthUser(response?.data?.data?.user))
-       await authenticateWithNextAuth(response?.data?.user);
+      const response = await axios.post(`https://node-express-hostapi.vercel.app/api/user/login`, payload);      
+      if (response?.data.isSuccess) {
+       await authenticateWithNextAuth(response?.data?.data?.user);
       }
     } catch (error: any) {
     //   errorMessage(error?.response?.data?.message || 'Login failed, please try again.');
