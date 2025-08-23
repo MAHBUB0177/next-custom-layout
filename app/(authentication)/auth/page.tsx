@@ -27,7 +27,6 @@ const Login = () => {
   const {status: sessionStatus } = useSession();
   const searchParams = useSearchParams();
   const router = useRouter()
-//   const dispatch = useDispatch()
 
 
   //simple authentication part:
@@ -46,10 +45,13 @@ const Login = () => {
     //   return errorMessage('User Name Or Password Missing');
     }
     try {
-      // const response = await axios.post(`https://node-express-hostapi-production-b68c.up.railway.app/api/user/login`, payload);
       const response = await axios.post(`https://node-express-hostapi.vercel.app/api/user/login`, payload);      
       if (response?.data.isSuccess) {
        await authenticateWithNextAuth(response?.data?.data?.user);
+        // Cache the user data globally
+        // queryClient.setQueryData(["user"], response?.data?.data?.user);
+        // Optional: also persist in localStorage
+        localStorage.setItem("user", JSON.stringify(response?.data?.data));
       }
     } catch (error: any) {
     //   errorMessage(error?.response?.data?.message || 'Login failed, please try again.');
